@@ -1,0 +1,44 @@
+
+//Colors 
+$blue:#1731A4;
+$lightText:rgba(63, 63, 63, 0.5);
+$borderColor:#DADADA;
+$greybg:#f6f6f6;
+$lblue:#E6EBFF;
+$textcolor:#3F3F3F;
+                
+
+
+
+//mixins
+@mixin big-button {
+    cursor:pointer;
+    color:#fff;
+    min-width: 150px;
+    height: 45px;
+    border-radius: 30px;
+    font-size:18px;
+} 
+@mixin button {
+    cursor:pointer;
+    color:#fff;
+    min-width: 100px;
+    height: 30px;
+    border-radius: 30px;
+    font-size:14px;
+} 
+@mixin bottom-input{
+    border-bottom:1px solid #3F3F3F;
+}
+@mixin text-center{
+    text-align: center;
+}
+@mixin text-right{
+    text-align: right;
+}
+@mixin text-left{
+    text-align: left;
+}
+@mixin full-width{
+    width:100%;
+}

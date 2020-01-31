@@ -1,0 +1,470 @@
+@import "variable.scss";
+
+*, *:hover, *:focus {
+    border: 0;
+    outline: 0;
+}
+
+small {
+    font-size: 50%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    font-size: 14px;
+    color: $textcolor;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+
+    &.v-align {
+        align-items: center;
+    }
+
+    &.h-align {
+        justify-content: center;
+    }
+}
+
+.m-b-13 {
+    margin-bottom: 13px;
+}
+
+.p-20 {
+    padding: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.login-section {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+
+    .login-form {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        max-width: 311px;
+
+        h1 {
+            font-weight: normal;
+            font-size: 30px;
+            line-height: 35px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 18px;
+            @include text-center;
+        }
+
+        form {
+            color: $lightText;
+            margin-top: 6px;
+            @include full-width;
+
+            input {
+                @include bottom-input;
+                @include full-width;
+                height: 30px;
+                margin-top: 4px;
+                color: #3F3F3F;
+            }
+        }
+
+
+        .login-btn {
+            @include big-button;
+            background: $blue;
+        }
+    }
+}
+
+.field {
+    margin-bottom: 20px;
+
+    a {
+        color: $textcolor;
+        text-decoration: none;
+    }
+}
+
+nav {
+    padding: 10px;
+    background: $greybg;
+
+    .page-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .user-info {
+        display: flex;
+        align-items: center;
+
+        .user-avatar {
+            margin-left: 10px;
+            color: $blue;
+            position: relative;
+            cursor: pointer;
+
+            .account-dropdown {
+                position: absolute;
+                right: 0;
+                background: #fff;
+                min-width: 315px;
+                box-sizing: border-box;
+                color: $textcolor;
+                border: 1px solid $borderColor;
+                display: none;
+                cursor: default;
+                z-index: 2;
+
+                .avatar-pic {
+                    width: 66px;
+                    height: 66px;
+                    min-width: 66px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    position: relative;
+                    margin-right: 20px;
+
+                    img {
+                        width: 100%;
+                    }
+
+                    .change-pic {
+                        position: absolute;
+                        bottom: 0;
+                        width: 100%;
+                        height: 23px;
+                        color: #fff;
+                        font-size: 10px;
+                        text-align: center;
+                        background: rgba(0, 0, 0, 0.50);
+                        line-height: 20px;
+                        cursor: pointer;
+                    }
+                }
+
+                .user-name {
+                    font-weight: 500;
+                }
+
+                .dropdown-footer {
+                    padding: 20px;
+                    background: $lblue;
+                    @include text-right;
+                }
+            }
+
+            &:hover {
+                .account-dropdown {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.page-content {
+    max-width: 960px;
+    margin: auto;
+}
+
+.page-title {
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.stats {
+    display: flex;
+
+    .stats-tile {
+        background: $lblue;
+        flex: 1;
+        margin: 10px;
+        padding: 10px;
+        position: relative;
+        height:120px;
+
+        &:first-of-type {
+            margin-left: 0;
+        }
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+
+        .info-icon {
+            font-size: 20px;
+            right: 10px;
+            top: 10px;
+            position: absolute;
+            cursor: pointer;
+        }
+
+        .numbers {
+            font-size: 44px;
+            font-weight: 600;
+        }
+    }
+}
+
+button.new-push, button.send-btn, button.sign-out {
+    @include button;
+    background: $blue;
+}
+
+.message-list {
+    overflow: auto;
+    max-height: calc(100vh - 370px);
+
+    .message {
+        border-bottom: 1px solid $borderColor;
+        padding: 8px 0;
+
+        &:hover {
+            background: $greybg;
+        }
+    }
+}
+
+select {
+    height: 32px;
+    background: $lblue;
+    border: 1px solid $blue;
+    color: $textcolor;
+    margin-bottom: 15px;
+}
+
+.main-content {
+    display: flex;
+
+    .push-details {
+        flex: 1;
+
+        .graph {
+            background: $greybg;
+            height: 145px;
+        }
+    }
+
+    .push-stats {
+        width: 306px;
+        margin-left: 20px;
+        @include text-right;
+    }
+
+    .message-period, .message-selected {
+        display: flex;
+        margin: 44px 0;
+
+        & > div {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            padding: 0 27px;
+
+            &:first-of-type {
+                border-right: 1px solid $borderColor;
+            }
+        }
+
+        .numbers {
+            font-size: 30px;
+        }
+    }
+}
+
+.grey-card {
+    background: $greybg;
+    min-height: 145px;
+    display: flex;
+    flex-direction: column;
+    @include text-left;
+}
+
+.delivery-stats {
+    padding: 20px;
+}
+
+
+.new-message {
+    display: flex;
+
+    .new-push-details {
+        width: 306px;
+        margin-right: 20px;
+        background: $greybg;
+        padding: 30px;
+        box-sizing: border-box;
+
+        label {
+            font-weight: 500;
+        }
+
+        input, textarea {
+            width: 100%;
+            height: 35px;
+            padding: 10px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            border: 1px solid $borderColor;
+            padding-right: 36px;
+        }
+
+        textarea {
+            height: 130px;
+            resize: none;
+        }
+
+        .field-control {
+            position: relative;
+            margin-top: 8px;
+
+            &:after {
+                content: "";
+                background: url(../img/smile.svg);
+                position: absolute;
+                width: 15px;
+                height: 15px;
+                right: 10px;
+                top: 10px;
+            }
+
+            &.upload {
+                height: 35px;
+                border: 1px solid $borderColor;
+                background: #fff;
+
+                &:after {
+                    content: "+";
+                    background: none;
+                    border-radius: 50%;
+                    background: $blue;
+                    color: #fff;
+                    @include text-center;
+                    line-height: 15px;
+                }
+
+                input {
+                    opacity: 0;
+                }
+
+                &:before {
+                    content: "Upload";
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    opacity: .6;
+                }
+            }
+
+            &.url {
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+.bgimgwd{
+    width:100%
+}
+.push-preview-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: -27px;
+    align-items: flex-end;
+
+    .push-preview {
+        background: $greybg;
+        flex: 1;
+        display: flex;
+        margin-top: 10px;
+        width: 100%;
+        position: relative;
+
+        .advertise-block {
+            max-width: 300px;
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            flex-direction: column;
+            border: 1px solid $borderColor;
+            width: 100%;
+            background: #fff;
+        }
+
+        .bgImg {
+            background: url(https://image.shutterstock.com/image-photo/beautiful-abstract-grunge-decorative-navy-260nw-539880832.jpg) left top no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 150px;
+            display: flex;
+        }
+
+        .adverties-bottom {
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .samll-icon {
+            width: 40px;
+            height: 40px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+
+        .samll-icon img {
+            width: 100%;
+        }
+
+        .detail-block {
+            width: calc(100% - 50px);
+            padding-left: 10px;
+            box-sizing: border-box;
+        }
+
+        .detail-block label {
+            font-weight: 600;
+            margin: 0px 0px 5px;
+        }
+
+        .advertise-block .field {
+            margin: 0px;
+            padding: 10px 10px;
+            justify-content: flex-end;
+            display: flex;
+            box-sizing: border-box;
+        }
+    }
+}
+
+.back-to-home {
+    color: $textcolor;
+    display: flex;
+    width: max-content;
+}
+
+
